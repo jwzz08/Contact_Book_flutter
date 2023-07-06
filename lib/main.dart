@@ -12,14 +12,14 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
         home: Scaffold(
-            appBar: AppBar(title: Text('앱임')),
-            body: Align(
-              alignment: Alignment.topCenter,
-              child: Container(
-                width: double.infinity, height: 50, color: Colors.blue,
-                ),
+            appBar: AppBar(leading: Icon(Icons.menu),title: Text("제목입니다"),
+            actions: const [Icon(Icons.star), Icon(Icons.star)],),
+            body: SizedBox(
+                  child: IconButton(
+                    icon: Icon(Icons.star),
+                    onPressed: (){},
+                  )
             ),
-
 
             bottomNavigationBar: BottomAppBar(
               child: SizedBox(
@@ -35,7 +35,6 @@ class MyApp extends StatelessWidget {
               ),
             )
         )
-
     );
   }
 }
