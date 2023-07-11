@@ -9,41 +9,54 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
         home: Scaffold(
-            appBar: AppBar(title: Text("금호동3가", style: TextStyle(color: Colors.black),),
+          appBar: AppBar(
+              title: Text("금호동3가", style: TextStyle(color: Colors.black),),
               backgroundColor: Colors.white,
               actions: <Widget>[
-                IconButton(onPressed: () => {}, icon: Icon(Icons.search, color: Colors.black,)),
-                IconButton(onPressed: () => {}, icon: Icon(Icons.menu, color: Colors.black,)),
-                IconButton(onPressed: () => {}, icon: Icon(Icons.add_alert, color: Colors.black,))
+                IconButton(onPressed: () => {},
+                    icon: Icon(Icons.search, color: Colors.black,)),
+                IconButton(onPressed: () => {},
+                    icon: Icon(Icons.menu, color: Colors.black,)),
+                IconButton(onPressed: () => {},
+                    icon: Icon(Icons.add_alert, color: Colors.black,))
               ]
-            ),
-            body: Container(
-              alignment: Alignment.center,
-              child: Row(
-                children: [
-                Image.asset('camera.jpg', width: 100, height: 200,alignment: Alignment.topLeft, ),
-                  Row(
-                    children: const [
-                      Column(
-                        crossAxisAlignment:CrossAxisAlignment.start,
-                          children: [
-                            Text("캐논 DSLR 100D (단렌즈,충전기 16기가SD 포함", style: TextStyle(fontSize: 19),
-                            softWrap: true,),
-                            Text("성동구 행당동 . 끌올 10분 전", style: TextStyle(color: Colors.black54)),
-                            Text("210,000원"),
-                            Text("♡4", textAlign: TextAlign.right),
-                          ],
+          ),
+          body: Container(
+            height: 150,
+            padding: EdgeInsets.all(20),
+            child: Row(
+              children: [
+                Image.asset('camera.jpg', width: 100,
+                  height: 200,
+                  alignment: Alignment.topLeft,),
+                Container(child: Container(
+                  width: 300,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("캐논 DSLR 100D 단렌즈", style: TextStyle(fontSize: 18)),
+                      Text("성동구 행당동 . 끌올 10분 전",
+                          style: TextStyle(color: Colors.black54)),
+                      Text("210,000원"),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Icon(Icons.favorite),
+                          Text("4"),
+                        ],
                       ),
                     ],
-                  )
-          ]
-              ),
+                  ),
+                ),
+                )
+              ],
             ),
+          ),
 
-            bottomNavigationBar: BottomAppBar(
+
+          bottomNavigationBar: BottomAppBar(
               child: SizedBox(
                 height: 50,
                 child: Row(
@@ -54,9 +67,11 @@ class MyApp extends StatelessWidget {
                       Icon(Icons.contact_page),
                     ]
                 ),
-              ),
-            )
+              )
+          ),
         )
     );
   }
 }
+
+
