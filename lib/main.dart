@@ -14,14 +14,18 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(),
           bottomNavigationBar: BottomLayout(),
           body: ListView(
-            children: const [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Icon(Icons.person_add_rounded, size: 35), Text("홍길동", style: TextStyle(fontSize: 20)),
-                  Icon(Icons.person_2_rounded, size: 35), Text("홍길동", style: TextStyle(fontSize: 20)),
-                  Icon(Icons.person_2_rounded, size: 35), Text("홍길동", style: TextStyle(fontSize: 20)),
-                ],
+            children: [
+              ListTile(
+                leading: Image(image: AssetImage("profile_icon.png"),height: 40, ),
+                title: Text("홍길동", style: TextStyle(fontSize: 20)),
+              ),
+              ListTile(
+                leading: Image(image: AssetImage("profile_icon.png"),height: 40, ),
+                title: Text("홍길동", style: TextStyle(fontSize: 20)),
+              ),
+              ListTile(
+                leading: Image(image: AssetImage("profile_icon.png"),height: 40, ),
+                title: Text("홍길동", style: TextStyle(fontSize: 20)),
               )
             ],
           ),
