@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp( MaterialApp(
+      home: MyApp())
+  );
 }
 
 
@@ -19,14 +21,33 @@ class _MyAppState extends State<MyApp> {        //state는 렌더링 해줌, 자
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
+    return Scaffold(
           floatingActionButton: FloatingActionButton(
             child: Text(a.toString()),
             onPressed:() {
-              setState(() {               //state 사용할 거면 꼭 setState 써줘야함
-                a++;
-              });
+              showDialog(context: context, builder: (context) {
+                return AlertDialog(
+                  title: Text("Contact"),
+                  content: TextFormField(),
+                  actions: [
+                    Container(
+                      child: TextButton(
+                        onPressed: (){
+                          Navigator.of(context).pop();
+                        },
+                        child: Text("Cancel"),
+                      )
+                    ),
+                    Container(
+                      child: TextButton(
+                        onPressed: (){
+                        },
+                        child: Text("OK"),
+                      ),
+                    ),
+                  ],
+                );
+              },);
             },
           ),
           appBar: AppBar(title: Text('Contact App'),),
@@ -40,8 +61,7 @@ class _MyAppState extends State<MyApp> {        //state는 렌더링 해줌, 자
               );
             },
           )
-        )
-    );
+        );
   }
 }
 
